@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mdatsev/liltea/issues"
   },
-  "homepage": "https://github.com/mdatsev/liltea#readme"
+  "homepage": "https://github.com/mdatsev/liltea#readme",
+  "dependencies": {
+    "js-yaml": "^3.10.0"
+  }
 }
