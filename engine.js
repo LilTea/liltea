@@ -4,7 +4,15 @@ var flags = {
     reverse : false,
     greed : false
 }
-
+function preventPop(){
+    flags.preventPop = true;
+}
+function reverse(){
+    flags.reverse = true;
+}
+function greed(){
+    flags.greed = true;
+}
 function add(){
     stack.push(a(true) + a(true));
 }
@@ -18,16 +26,30 @@ function divide(){
     stack.push(a(true) / a(true));
 }
 function a(toPop){
-    if(toPop){
-        return stack.pop();
-    }else{
-        return stack[stack.length - 1];
+    let toReturn;
+    if(flags.reverse){
+        if(toPop && flags.preventPop == false){
+            return stack.shift();
+        }else{
+            return stack[0];
+        }
     }
+    else{
+        if(toPop && flags.preventPop == false){
+            return stack.pop();
+        }else{
+            return stack[stack.length - 1];
+        }
+    }
+}
+function deleteModificators(){
+    flags.greed = false;
+    flags.preventPop = false;
+    flags.reverse = false;
 }
 function b(){
     return stack[stack.length -2];
 }
-
 function ascendingSort(){
     if(typeof stack[a()] == "Number"){
         stack.sort((a,b) => {
@@ -52,7 +74,6 @@ function square(){
     stack.push(a() * a(true));
 }
 function sqrt(){
-   
     stack.push(Math.sqrt(a(true)));
 }
 function dup(){
