@@ -1,19 +1,88 @@
-- big: +
-  lil: plus
+- lil: +
+  big: plus
   js: add
 
-- big: "-"
-  lil: minus
+- lil: "-"
+  big: minus
   js: subtraction
 
-- big: "*"
-  lil: mult
+- lil: "*"
+  big: mult
   js: subtraction
 
-- big: /
-  lil: div
+- lil: /
+  big: div
   js: divide
 
-- big: $
-  lil: index
+- lil: $
+  big: index
   js: at
+
+- lil:
+  big: ascsort
+  js: ascendingSort
+
+- lil:
+  big: dscsort
+  js: descendingSort
+
+- lil:
+  big: square
+  js: square
+
+- lil:
+  big: sqrt
+  js: sqrt
+
+- lil:
+  big: dup
+  js: dup
+
+- lil:
+  big: tan
+  js: tan
+
+- lil:
+  big: sin
+  js: sin
+
+- lil:
+  big: cos
+  js: cos
+
+- lil:
+  big: empty
+  js: empty
+
+- lil:
+  big: lenght
+  js: stackLenght
+
+- lil: e
+  big: element
+  js: element
+
+- lil: E
+  big: elementPop
+  js: elementPop
+
+- lil: =
+  big: compare
+  js: compare
+
+- lil: p
+  big: print
+  js: print
+
+- lil: P
+  big: printPop
+  js: printPop
+
+- lil: 
+  big: increment
+  js: increment
+
+- lil: =
+  big: decrement
+  js: decrement
+
