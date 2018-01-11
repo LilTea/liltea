@@ -132,6 +132,10 @@ function decrement(){
     stack[stack.length - 1]--;;
 }
 
+exports.setStack = function(st) {
+    stack = st;
+}
+
 exports.execute = function(command) {
     eval(command+'()');
     deleteModificators();

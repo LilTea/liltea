@@ -19,13 +19,13 @@ Give examples
 To run liltea:
 
 ```
-cat source.lit | node liltea.js
+node liltea.js liltea.js < source.lit
 ```
 
 To compress bigtea:
 
 ```
-cat source.lit | compressor.js | node liltea.js
+compressor.js < source.lit
 ```
 
 ## Documentaion
