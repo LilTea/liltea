@@ -1,0 +1,19 @@
+- big: +
+  lil: plus
+  js: add
+
+- big: "-"
+  lil: minus
+  js: subtraction
+
+- big: "*"
+  lil: mult
+  js: subtraction
+
+- big: /
+  lil: div
+  js: divide
+
+- big: $
+  lil: index
+  js: at
