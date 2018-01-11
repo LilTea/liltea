@@ -120,16 +120,20 @@ function compare(){
     return a(true) == a(true)
 }
 function printPop(){
-    process.stdout.write(a(true));
+    process.stdout.write(a(true).toString());
 }
 function print(){
-    process.stdout.write(a());
+    process.stdout.write(a().toString());
 }
 function increment(){
     stack[stack.length - 1]++;
 }
 function decrement(){
     stack[stack.length - 1]--;;
+}
+
+exports.setStack = function(st) {
+    stack = st;
 }
 
 exports.execute = function(command) {
