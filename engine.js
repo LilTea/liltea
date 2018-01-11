@@ -120,10 +120,10 @@ function compare(){
     return a(true) == a(true)
 }
 function printPop(){
-    process.stdout.write(a(true));
+    process.stdout.write(a(true).toString());
 }
 function print(){
-    process.stdout.write(a());
+    process.stdout.write(a().toString());
 }
 function increment(){
     stack[stack.length - 1]++;
