@@ -42,7 +42,7 @@ compressor.js < source.lit
 
 | lil | big        | Description                                                                         |
 |-----|------------|-------------------------------------------------------------------------------------|
-| +   | plus       | Sums a and b  and pops them pushing back the result                                 |
+| +   | plus      | Sums a and b  and pops them pushing back the result                                 |
 | -   | minus      | Subtract a and b and pops them pushing back the result                              |
 | *   | mult       | Multiplies a and b and pops them pushing back the result                            |
 | /   | div        | Divide the a and b and pops them pushing back the result                            |
@@ -65,12 +65,15 @@ compressor.js < source.lit
 | _   | decrement  | Decrement a with 1                                                                  |
 
 
-###Modificators
+### Modificators
+
 | lil | big        | Description                                                                               |
 |-----|------------|-------------------------------------------------------------------------------------------|
 |     | setPrevent | Prevents the next operation from deleting things from the stack                           |
 |     | setReverse | Causes the next operator to read/pop from the beginning of the stack, rather than the end |
 |     | setGreed   | Causes the next operator to apply to the entire stack                                     |
+
+
 ## Running the tests
 ## Deployment
 ## Built With Love
