@@ -64,8 +64,12 @@ compressor.js < source.lit
 | _   | decrement  | Decrement a with 1                                                                  |
 
 
-##Modificators
-
+###Modificators
+| lil | big        | Description                                                                               |
+|-----|------------|-------------------------------------------------------------------------------------------|
+|     | setPrevent | Prevents the next operation from deleting things from the stack                           |
+|     | setReverse | Causes the next operator to read/pop from the beginning of the stack, rather than the end |
+|     | setGreed   | Causes the next operator to apply to the entire stack                                     |
 ## Running the tests
 ## Deployment
 ## Built With Love
