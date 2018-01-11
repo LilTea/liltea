@@ -86,3 +86,14 @@
   big: decrement
   js: decrement
 
+- lil:
+  big: setPrevent
+  js: setPreventPop
+
+- lil:
+  big: setReverse
+  js: setReverse
+
+- lil:
+  big: setGreed
+  js: setGreed

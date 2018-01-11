@@ -4,13 +4,13 @@ var flags = {
     reverse : false,
     greed : false
 }
-function preventPop(){
+function setPreventPop(){
     flags.preventPop = true;
 }
-function reverse(){
+function setReverse(){
     flags.reverse = true;
 }
-function greed(){
+function setGreed(){
     flags.greed = true;
 }
 function add(){
@@ -134,4 +134,5 @@ function decrement(){
 
 exports.execute = function(command) {
     eval(command+'()');
+    deleteModificators();
 }
