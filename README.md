@@ -39,6 +39,7 @@ compressor.js < source.lit
   a - The last element in the stack
   b - The second to last element in the stack  
 ```
+
 | lil | big        | Description                                                                         |
 |-----|------------|-------------------------------------------------------------------------------------|
 | +   | plus       | Sums a and b  and pops them pushing back the result                                 |
