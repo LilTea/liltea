@@ -66,7 +66,7 @@
   big: elementPop
   js: elementPop
 
-- lil: =
+- lil: "="
   big: compare
   js: compare
 
@@ -82,7 +82,7 @@
   big: increment
   js: increment
 
-- lil: =
+- lil: _
   big: decrement
   js: decrement
 

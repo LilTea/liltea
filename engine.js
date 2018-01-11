@@ -131,5 +131,7 @@ function increment(){
 function decrement(){
     stack[stack.length - 1]--;;
 }
-decrement();
-console.log(stack);
+
+exports.execute = function(command) {
+    eval(command+'()');
+}
