@@ -62,6 +62,8 @@ compressor.js < source.lit
 | P   | printPop   | Print a on STDOUT and pops it                                                       |
 |     | increment  | Increment a with 1                                                                  |
 | _   | decrement  | Decrement a with 1                                                                  |
+
+
 ##Modificators
 
 ## Running the tests
