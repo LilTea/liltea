@@ -36,6 +36,29 @@ compressor.js < source.lit
 ### IO
 ### Atoms
 
+| lil | big        | Description                                                                         |
+|-----|------------|-------------------------------------------------------------------------------------|
+| +   | plus       | Sums the last two elements in the stack and pops them pushing back the result       |
+| -   | minus      | Subtract the last two elements in the stack and pops them pushing back the result   |
+| *   | mult       | Multiplies the last two elements in the stack and pops them pushing back the result |
+| /   | div        | Divide the last two elements in the stack and pops them pushing back the result     |
+|     | ascsort    | Sorts the last array in the stack in ascending order                                |
+|     | dscsort    | Sorts the last array in the stack in descending order                               |
+|     | square     | Push the square of the a in the stack and pops it                                   |
+|     | sqrt       | Push the square root of the a in the stack and pops it                              |
+|     | dup        | Duplicate the last element of the stack and pushes it                               |
+|     | tan        | Pops a in the stack and push the tangents of it                                     |
+|     | sin        | Pops a in the stack and push the sinus of it                                        |
+|     | cos        | Pops a in the stack and push the cosinus of it                                      |
+|     | empty      | Empty the stack                                                                     |
+|     | lenght     | Push the length of the stack                                                        |
+|     | element    | Pushes the element with index a of the last found array                             |
+|     | elementPop | Pushes the element with index a of the last found array and pops the array          |
+| =   | compare    | Compare a and b and pops them                                                       |
+| p   | print      | Print a on STDOUT                                                                   |
+| P   | printPop   | Print a on STDOUT and pops it                                                       |
+|     | increment  | Increment a with 1                                                                  |
+| _   | decrement  | Decrement a with 1                                                                  |
 ## Running the tests
 ## Deployment
 ## Built With Love
