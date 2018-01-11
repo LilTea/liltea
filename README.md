@@ -40,38 +40,38 @@ compressor.js < source.lit
   b - The second to last element in the stack  
 ```
 
-| lil | big        | Description                                                                         |
-|-----|------------|-------------------------------------------------------------------------------------|
-| +   | plus      | Sums a and b  and pops them pushing back the result                                 |
-| -   | minus      | Subtract a and b and pops them pushing back the result                              |
-| *   | mult       | Multiplies a and b and pops them pushing back the result                            |
-| /   | div        | Divide the a and b and pops them pushing back the result                            |
-|     | ascsort    | Sorts the last array in ascending order                                             |
-|     | dscsort    | Sorts the last array in descending order                                            |
-|     | square     | Push the square of the a and pops it                                                |
-|     | sqrt       | Push the square root of the a and pops it                                           |
-|     | dup        | Duplicate the last element of the stack and pushes it                               |
-|     | tan        | Pops a and push the tangents of it                                                  |
-|     | sin        | Pops a and push the sinus of it                                                     |
-|     | cos        | Pops a and push the cosinus of it                                                   |
-|     | empty      | Empty the stack                                                                     |
-|     | lenght     | Push the length of the stack                                                        |
-|     | element    | Pushes the element with index a of the last found array                             |
-|     | elementPop | Pushes the element with index a of the last found array and pops the array          |
-| =   | compare    | Compare a and b and pops them                                                       |
-| p   | print      | Print a on STDOUT                                                                   |
-| P   | printPop   | Print a on STDOUT and pops it                                                       |
-|     | increment  | Increment a with 1                                                                  |
-| _   | decrement  | Decrement a with 1                                                                  |
+| lil | big        | Description                                                                           |
+|-----|------------|---------------------------------------------------------------------------------------|
+| +   | `plus`      | Sums a and b  and pops them pushing back the result                                  |
+| -   | `minus`      | Subtract a and b and pops them pushing back the result                              |
+| *   | `mult`       | Multiplies a and b and pops them pushing back the result                            |
+| /   | `div`        | Divide the a and b and pops them pushing back the result                            |
+|     | `ascsort`    | Sorts the last array in ascending order                                             |
+|     | `dscsort`    | Sorts the last array in descending order                                            |
+|     | `square`     | Push the square of the a and pops it                                                |
+|     | `sqrt`       | Push the square root of the a and pops it                                           |
+|     | `dup`        | Duplicate the last element of the stack and pushes it                               |
+|     | `tan`        | Pops a and push the tangents of it                                                  |
+|     | `sin`        | Pops a and push the sinus of it                                                     |
+|     | `cos`        | Pops a and push the cosinus of it                                                   |
+|     | `empty`      | Empty the stack                                                                     |
+|     | `lenght`     | Push the length of the stack                                                        |
+|     | `element`    | Pushes the element with index a of the last found array                             |
+|     | `elementPop` | Pushes the element with index a of the last found array and pops the array          |
+| =   | `compare`    | Compare a and b and pops them                                                       |
+| p   | `print`      | Print a on STDOUT                                                                   |
+| P   | `printPop`   | Print a on STDOUT and pops it                                                       |
+|     | `increment`  | Increment a with 1                                                                  |
+| _   | `decrement` | Decrement a with 1                                                                   |
 
 
 ### Modificators
 
-| lil | big        | Description                                                                               |
-|-----|------------|-------------------------------------------------------------------------------------------|
-|     | setPrevent | Prevents the next operation from deleting things from the stack                           |
-|     | setReverse | Causes the next operator to read/pop from the beginning of the stack, rather than the end |
-|     | setGreed   | Causes the next operator to apply to the entire stack                                     |
+| lil | big        | Description                                                                                 |
+|-----|------------|---------------------------------------------------------------------------------------------|
+|     | `setPrevent` | Prevents the next operation from deleting things from the stack                           |
+|     | `setReverse` | Causes the next operator to read/pop from the beginning of the stack, rather than the end |
+|     | `setGreed`   | Causes the next operator to apply to the entire stack                                     |
 
 
 ## Running the tests
