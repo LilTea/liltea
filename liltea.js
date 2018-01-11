@@ -11,7 +11,8 @@ function parseLilTea(source) {
 }
 
 function parseInput(input) {
-    engine.setStack(input.split(/\s/).map(Number));
+    let stack = input.split(/\s+/).filter(s => s.length !== 0).map(Number);
+    engine.setStack([stack.length == 1 ? stack[0] : stack]);
     parseLilTea(source);
 }
 
