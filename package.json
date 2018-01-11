@@ -1,0 +1,19 @@
+{
+  "name": "liltea",
+  "version": "0.0.1",
+  "description": "lil",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdatsev/liltea.git"
+  },
+  "author": "mdatsev-VGeorgiev1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mdatsev/liltea/issues"
+  },
+  "homepage": "https://github.com/mdatsev/liltea#readme"
+}
