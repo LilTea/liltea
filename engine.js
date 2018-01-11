@@ -51,21 +51,21 @@ function b(){
     return stack[stack.length -2];
 }
 function ascendingSort(){
-    if(typeof stack[a()] == "Number"){
-        stack.sort((a,b) => {
+    if(typeof stack[lastArrayIndex()][0] == "Number"){
+        stack[lastArrayIndex()].sort((a,b) => {
             return a - b;
         })
     }else{
-        stack.sort();
+        stack[lastArrayIndex()].sort();
     }
 }
 function descendingSort(){
-    if(typeof stack[a()] == "Number"){
-        stack.sort((a,b) => {
+    if(typeof stack[lastArrayIndex()][0] == "Number"){
+        stack[lastArrayIndex()].sort((a,b) => {
             return b - a;
         })
     }else{
-        stack.sort();
+        stack[lastArrayIndex()].sort();
         stack.reverse();
     }
 }
