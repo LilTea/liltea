@@ -6,7 +6,8 @@ const source = fs.readFileSync(process.argv[2]).toString();
 
 function parseLilTea(source) {
     source.split('').forEach(lilToken => {
-        engine.execute(lil2jsToken(lilToken));
+        engine[lil2jsToken(lilToken)]();
+        engine.deleteModificators();
     });
 }
 
