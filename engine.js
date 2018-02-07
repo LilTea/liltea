@@ -1,126 +1,126 @@
-var stack = [];
-var flags = {
-    preventPop: false,
-    reverse: false,
-    greed: false
-} 
 module.exports = {
+    stack: [],
+    flags: {
+        preventPop: false,
+        reverse: false,
+        greed: false
+    },
     setPreventPop() {
-        flags.preventPop = true;
+        this.flags.preventPop = true;
     },
 
     setReverse() {
-        flags.reverse = true;
+        this.flags.reverse = true;
     },
 
     setGreed() {
-        flags.greed = true;
+        this.flags.greed = true;
     },
 
     add() {
-        stack.push(this.a(true) + this.a(true));
+        this.stack.push(this.a(true) + this.a(true));
     },
 
     subtraction() {
-        stack.push(this.a(true) - this.a(true));
+        this.stack.push(this.a(true) - this.a(true));
     },
 
     mult() {
-        stack.push(this.a(true) * this.a(true));
+        this.stack.push(this.a(true) * this.a(true));
     },
 
     divide() {
-        stack.push(this.a(true) / this.a(true));
+        this.stack.push(this.a(true) / this.a(true));
     },
 
     a(toPop) {
         let toReturn;
-        if (flags.reverse) {
-            if (toPop && flags.preventPop == false) {
-                return stack.shift();
+        if (this.flags.reverse) {
+            if (toPop && this.flags.preventPop == false) {
+                return this.stack.shift();
             } else {
-                return stack[0];
+                return this.stack[0];
             }
         } else {
-            if (toPop && flags.preventPop == false) {
-                return stack.pop();
+            if (toPop && this.flags.preventPop == false) {
+                return this.stack.pop();
             } else {
-                return stack[stack.length - 1];
+                return this.stack[this.stack.length - 1];
             }
         }
     },
 
     deleteModificators() {
-        flags.greed = false;
-        flags.preventPop = false;
-        flags.reverse = false;
+        this.flags.greed = false;
+        this.flags.preventPop = false;
+        this.flags.reverse = false;
     },
 
     b() {
-        return stack[stack.length - 2];
+        return this.stack[this.stack.length - 2];
     },
 
     ascendingSort() {
-        if (typeof stack[lastArrayIndex()][0] == "Number") {
-            stack[lastArrayIndex()].sort((a, b) => {
+        if (typeof this.stack[lastArrayIndex()][0] == "Number") {
+            this.stack[lastArrayIndex()].sort((a, b) => {
                 return a - b;
             })
         } else {
-            stack[lastArrayIndex()].sort();
+            this.stack[lastArrayIndex()].sort();
         }
     },
 
     descendingSort() {
-        if (typeof stack[lastArrayIndex()][0] == "Number") {
-            stack[lastArrayIndex()].sort((a, b) => {
+        if (typeof this.stack[lastArrayIndex()][0] == "Number") {
+            this.stack[lastArrayIndex()].sort((a, b) => {
                 return b - a;
             })
         } else {
-            stack[lastArrayIndex()].sort();
-            stack.reverse();
+            this.stack[lastArrayIndex()].sort();
+            this.stack.reverse();
         }
     },
 
     square() {
-        stack.push(this.a() * this.a(true));
+        this.stack.push(this.a() * this.a(true));
     },
 
     sqrt() {
-        stack.push(Math.sqrt(this.a(true)));
+        this.stack.push(Math.sqrt(this.a(true)));
     },
 
     dup() {
-        stack.push(stack[this.a()]);
+        this.stack.push(this.stack[this.a()]);
     },
 
     tan() {
-        stack.push(Math.tan(this.a(true)));
+        this.stack.push(Math.tan(this.a(true)));
     },
 
     tan() {
-        stack.push(Math.tan(this.a(true)));
+        this.stack.push(Math.tan(this.a(true)));
     },
 
     sin() {
-        stack.push(Math.sin(this.a(true)));
+        this.stack.push(Math.sin(this.a(true)));
     },
 
     cos() {
-        stack.push(Math.cos(this.a()));
+        this.stack.push(Math.cos(this.a()));
     },
 
     empty() {
-        stack = [];
+        this.stack = [];
     },
 
     stackLength() {
-        stack.push(stack.length);
+        this.stack.push(this.stack.length);
     },
 
     lastArrayIndex() {
-        let i = stack.length - 1
+        let i = this.stack.length - 1
         for (; i >= 0; i--) {
-            if (Array.isArray(stack[i])) {
+            if (Array.isArray(this.stack[i])) {
                 break;
             }
         }
@@ -128,15 +128,15 @@ module.exports = {
     },
 
     element() {
-        stack.push(stack[lastArrayIndex()][this.a()])
-        console.log(stack);
+        this.stack.push(this.stack[lastArrayIndex()][this.a()])
+        console.log(this.stack);
     },
 
     elementPop() {
         let index = lastArrayIndex()
-        stack.push(stack[index][this.a()])
-        stack.splice(index, 1);
-        console.log(stack);
+        this.stack.push(this.stack[index][this.a()])
+        this.stack.splice(index, 1);
+        console.log(this.stack);
     },
 
     compare() {
@@ -152,14 +152,14 @@ module.exports = {
     },
 
     increment() {
-        stack[stack.length - 1]++;
+        this.stack[this.stack.length - 1]++;
     },
 
     decrement() {
-        stack[stack.length - 1]--;;
+        this.stack[this.stack.length - 1]--;;
     },
 
     setStack(st) {
-        stack = st;
+        this.stack = st;
     }
 }
