@@ -1,99 +1,89 @@
 - lil: +
   big: plus
   js: add
-
-- lil: "-"
+- lil: '-'
   big: minus
   js: subtraction
-
-- lil: "*"
+- lil: '*'
   big: mult
   js: subtraction
-
 - lil: /
   big: div
   js: divide
-
 - lil: $
   big: index
   js: at
-
-- lil:
+- lil: null
   big: ascsort
   js: ascendingSort
-
-- lil:
+  lil_generated: ¡
+- lil: null
   big: dscsort
   js: descendingSort
-
-- lil:
+  lil_generated: ¢
+- lil: null
   big: square
   js: square
-
-- lil:
+  lil_generated: £
+- lil: null
   big: sqrt
   js: sqrt
-
-- lil:
+  lil_generated: ¤
+- lil: null
   big: dup
   js: dup
-
-- lil:
+  lil_generated: ¥
+- lil: null
   big: tan
   js: tan
-
-- lil:
+  lil_generated: ¦
+- lil: null
   big: sin
   js: sin
-
-- lil:
+  lil_generated: ©
+- lil: null
   big: cos
   js: cos
-
-- lil:
+  lil_generated: ¬
+- lil: null
   big: empty
   js: empty
-
-- lil:
+  lil_generated: ®
+- lil: null
   big: lenght
   js: stackLenght
-
+  lil_generated: µ
 - lil: e
   big: element
   js: element
-
 - lil: E
   big: elementPop
   js: elementPop
-
-- lil: "="
+- lil: =
   big: compare
   js: compare
-
 - lil: p
   big: print
   js: print
-
 - lil: P
   big: printPop
   js: printPop
-
-- lil: 
+- lil: null
   big: increment
   js: increment
-
+  lil_generated: ½
 - lil: _
   big: decrement
   js: decrement
-
-- lil:
+- lil: null
   big: setPrevent
   js: setPreventPop
-
-- lil:
+  lil_generated: ¿
+- lil: null
   big: setReverse
   js: setReverse
-
-- lil:
+  lil_generated: €
+- lil: null
   big: setGreed
   js: setGreed
+  lil_generated: Æ
