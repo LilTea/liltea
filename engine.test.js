@@ -1,5 +1,7 @@
-const sum = require('./engine');
+const engine = require('./engine');
 
 test('true is true', () => {
-  expect(true).toBe(true);
+    engine.setStack([1, 2]);
+    engine.add();
+    expect(engine.stack).toEqual([3]);
 });
