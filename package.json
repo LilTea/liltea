@@ -4,7 +4,7 @@
   "description": "lil",
   "main": "main.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "dependencies": {
     "js-yaml": "^3.10.0",
     "markdown-table": "^1.1.1"
+  },
+  "devDependencies": {
+    "jest": "^22.2.1"
   }
 }
