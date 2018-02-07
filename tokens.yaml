@@ -1,89 +1,114 @@
 - lil: +
   big: plus
   js: add
+  description: Pops the top 2 values and pushes their sum
 - lil: '-'
   big: minus
   js: subtraction
+  description: Pops the top 2 values and pushes their difference
 - lil: '*'
   big: mult
   js: subtraction
+  description: Pops the top 2 values and pushes their product
 - lil: /
   big: div
   js: divide
+  description: Pops the top 2 values and pushes their quotient
 - lil: $
   big: index
   js: at
+  description: Pushes the current iteration index
 - lil: null
   big: ascsort
   js: ascendingSort
   lil_generated: ¡
+  description: Sorts the top array in ascending order
 - lil: null
   big: dscsort
   js: descendingSort
   lil_generated: ¢
+  description: Sorts the top array in descending order
 - lil: null
   big: square
   js: square
   lil_generated: £
+  description: Pops the top value and pushes it's square
 - lil: null
   big: sqrt
   js: sqrt
   lil_generated: ¤
+  description: Pops the top value and pushes it's square
 - lil: null
   big: dup
   js: dup
   lil_generated: ¥
+  description: Pushes the top value
 - lil: null
   big: tan
   js: tan
   lil_generated: ¦
+  description: Pops the top value and pushes it's tan
 - lil: null
   big: sin
   js: sin
   lil_generated: ©
+  description: Pops the top value and pushes it's sin
 - lil: null
   big: cos
   js: cos
   lil_generated: ¬
+  description: Pops the top value and pushes it's cos
 - lil: null
   big: empty
   js: empty
   lil_generated: ®
+  description: Pops everything
 - lil: null
   big: lenght
   js: stackLenght
   lil_generated: µ
+  description: Pushes the length of the stack
 - lil: e
   big: element
   js: element
+  description: Pops the top value and pushes the element of the top array at that index
 - lil: E
   big: elementPop
   js: elementPop
+  description: Pops the top value and the top array and pushes the element at that index
 - lil: =
   big: compare
   js: compare
+  description: Pops the top 2 values and pushes their equality
 - lil: p
   big: print
   js: print
+  description: Print the top value
 - lil: P
   big: printPop
   js: printPop
+  description: Pop the top value and print it
 - lil: null
   big: increment
   js: increment
   lil_generated: ½
+  description: Increment the top value with 1
 - lil: _
   big: decrement
   js: decrement
+  description: Decrement the top value with 1
 - lil: null
   big: setPrevent
   js: setPreventPop
   lil_generated: ¿
+  description: Prevents the next operation from popping
 - lil: null
   big: setReverse
   js: setReverse
   lil_generated: €
+  description: Causes the next operation to see the stack in reverse
 - lil: null
   big: setGreed
   js: setGreed
   lil_generated: Æ
+  description: Causes the next operator to be applied to the entire stack
