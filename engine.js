@@ -24,7 +24,9 @@ class Engine{
     }
 
     subtraction() {
-        this.stack.push(this.a(true) - this.a(true));
+        let a = this.a(true);
+        let b = this.a(true);
+        this.stack.push(b - a);
     }
 
     mult() {
@@ -32,21 +34,25 @@ class Engine{
     }
 
     divide() {
-        this.stack.push(this.a(true) / this.a(true));
+        let a = this.a(true);
+        let b = this.a(true);
+        this.stack.push(b / a);
     }
 
     a(toPop) {
         let toReturn;
         if (this.flags.reverse) {
-            if (toPop && this.flags.preventPop == false) {
+            if (toPop==true && this.flags.preventPop == false) {
                 return this.stack.shift();
             } else {
                 return this.stack[0];
             }
         } else {
-            if (toPop && this.flags.preventPop == false) {
+            
+            if (toPop==true && this.flags.preventPop == false) {
                 return this.stack.pop();
             } else {
+
                 return this.stack[this.stack.length - 1];
             }
         }
@@ -61,25 +67,34 @@ class Engine{
     b() {
         return this.stack[this.stack.length - 2];
     }
-
+    lastArrayIndex() {
+        let i = this.stack.length - 1
+        for (; i >= 0; i--) {
+            if (Array.isArray(this.stack[i])) {
+                break;
+            }
+        }
+        return i
+    }
     ascendingSort() {
-        if (typeof this.stack[lastArrayIndex()][0] == "Number") {
-            this.stack[lastArrayIndex()].sort((a, b) => {
-                return a - b;
+        if (typeof this.stack[this.lastArrayIndex()][0] == "number") {
+        
+            this.stack[this.lastArrayIndex()].sort((a, b) => {            
+                  return a - b;
             })
         } else {
-            this.stack[lastArrayIndex()].sort();
+            this.stack[this.lastArrayIndex()].sort();
         }
     }
 
     descendingSort() {
-        if (typeof this.stack[lastArrayIndex()][0] == "Number") {
-            this.stack[lastArrayIndex()].sort((a, b) => {
+        if (typeof this.stack[this.lastArrayIndex()][0] == "number") {
+            this.stack[this.lastArrayIndex()].sort((a, b) => {
                 return b - a;
             })
         } else {
-            this.stack[lastArrayIndex()].sort();
-            this.stack.reverse();
+            this.stack[this.lastArrayIndex()].sort();
+            this.stack[this.lastArrayIndex()].reverse();
         }
     }
 
@@ -92,15 +107,15 @@ class Engine{
     }
 
     dup() {
-        this.stack.push(this.stack[this.a()]);
+        this.stack.push(this.a(false));
     }
 
     tan() {
         this.stack.push(Math.tan(this.a(true)));
     }
 
-    tan() {
-        this.stack.push(Math.tan(this.a(true)));
+    cotg() {
+        this.stack.push(Math.cotg(this.a(true)));
     }
 
     sin() {
@@ -108,7 +123,7 @@ class Engine{
     }
 
     cos() {
-        this.stack.push(Math.cos(this.a()));
+        this.stack.push(Math.cos(this.a(true)));
     }
 
     empty() {
@@ -118,29 +133,18 @@ class Engine{
     stackLength() {
         this.stack.push(this.stack.length);
     }
-
-    lastArrayIndex() {
-        let i = this.stack.length - 1
-        for (; i >= 0; i--) {
-            if (Array.isArray(this.stack[i])) {
-                break;
-            }
-        }
-        return i
-    }
-
     element() {
-        this.stack.push(this.stack[lastArrayIndex()][this.a()])
+        this.stack.push(this.stack[this.lastArrayIndex()][this.a()])
     }
 
     elementPop() {
-        let index = lastArrayIndex()
+        let index = this.lastArrayIndex()
         this.stack.push(this.stack[index][this.a()])
         this.stack.splice(index, 1);
     }
 
     compare() {
-        return this.a(true) == this.a(true)
+       this.stack.push(this.a(true) == this.a(true) | 0)
     }
 
     printPop() {
@@ -163,4 +167,6 @@ class Engine{
         this.stack = st;
     }
 }
+eng = new Engine()
+console.log(Math.cos(Math.PI/2))
 module.exports.engine = Engine
