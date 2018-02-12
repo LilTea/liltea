@@ -76,6 +76,7 @@ compressor.js < source.bit
 
 ## Running the tests
 ## Deployment
+[![CircleCI](https://circleci.com/gh/mdatsev/liltea.svg?style=svg)](https://circleci.com/gh/mdatsev/liltea)
 ## Built With Love
 ## Contributing
 ## Versioning 
