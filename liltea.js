@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const source = fs.readFileSync(process.argv[2]).toString();
 
-function parseLilTea(source) {
+function runLilTea(source) {
     source.split('').forEach(lilToken => {
         engine[lil2jsToken(lilToken)]();
         engine.deleteModificators();
@@ -12,9 +12,14 @@ function parseLilTea(source) {
 }
 
 function parseInput(input) {
-    let stack = input.split(/\s+/).filter(s => s.length !== 0).map(Number);
-    engine.setStack([stack.length == 1 ? stack[0] : stack]);
-    parseLilTea(source);
+    let lines = input.split(/\r\n?|\n/);
+    let elements = lines.map(l => l.split(/\s/));
+    let stack = elements.map(el => el.map(inEl => isNaN(parseFloat(inEl)) ? inEl : parseFloat(inEl)));
+    console.log(stack);
 }
 
-require("./helpers.js").getInput(parseInput);
+require("./helpers.js").getInput(input => {
+    let stack = parseInput(input);
+    engine.setStack([stack.length == 1 ? stack[0] : stack]);
+    runLilTea(source);
+});
