@@ -167,6 +167,5 @@ class Engine{
         this.stack = st;
     }
 }
-eng = new Engine()
-console.log(Math.cos(Math.PI/2))
+
 module.exports.engine = Engine
