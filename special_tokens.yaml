@@ -12,3 +12,16 @@ single_if: '?'
 multi_if: '!'
 single_else: ':'
 multi_else: ';'
+varables:
+  - setter: a
+    getter: A
+  - setter: b
+    getter: B
+  - setter: c
+    getter: C
+  - setter: d
+    getter: D
+  - setter: e
+    getter: E
+  - setter: f
+    getter: F
