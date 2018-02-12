@@ -1,7 +1,7 @@
-const engine = require('./engine');
-
+const Engine = require('./engine').engine;
+eng = new Engine();
 test('add', () => {
-    engine.setStack([1, 2]);
-    engine.add();
-    expect(engine.stack).toEqual([3]);
+    eng.setStack([1, 2]);
+    eng.add();
+    expect(eng.stack).toEqual([3]);
 });
