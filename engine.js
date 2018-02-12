@@ -1,37 +1,39 @@
-module.exports = {
-    stack: [],
-    flags: {
-        preventPop: false,
-        reverse: false,
-        greed: false
-    },
+class Engine{
+    constructor(outputCallback){
+        this.outputCallback = outputCallback
+        this.stack = [];
+        this.flags = {
+                preventPop: false,
+                reverse: false,
+                greed: false
+        }
+    }
     setPreventPop() {
         this.flags.preventPop = true;
-    },
-
+    }
     setReverse() {
         this.flags.reverse = true;
-    },
+    }
 
     setGreed() {
         this.flags.greed = true;
-    },
+    }
 
     add() {
         this.stack.push(this.a(true) + this.a(true));
-    },
+    }
 
     subtraction() {
         this.stack.push(this.a(true) - this.a(true));
-    },
+    }
 
     mult() {
         this.stack.push(this.a(true) * this.a(true));
-    },
+    }
 
     divide() {
         this.stack.push(this.a(true) / this.a(true));
-    },
+    }
 
     a(toPop) {
         let toReturn;
@@ -48,17 +50,17 @@ module.exports = {
                 return this.stack[this.stack.length - 1];
             }
         }
-    },
+    }
 
     deleteModificators() {
         this.flags.greed = false;
         this.flags.preventPop = false;
         this.flags.reverse = false;
-    },
+    }
 
     b() {
         return this.stack[this.stack.length - 2];
-    },
+    }
 
     ascendingSort() {
         if (typeof this.stack[lastArrayIndex()][0] == "Number") {
@@ -68,7 +70,7 @@ module.exports = {
         } else {
             this.stack[lastArrayIndex()].sort();
         }
-    },
+    }
 
     descendingSort() {
         if (typeof this.stack[lastArrayIndex()][0] == "Number") {
@@ -79,43 +81,43 @@ module.exports = {
             this.stack[lastArrayIndex()].sort();
             this.stack.reverse();
         }
-    },
+    }
 
     square() {
         this.stack.push(this.a() * this.a(true));
-    },
+    }
 
     sqrt() {
         this.stack.push(Math.sqrt(this.a(true)));
-    },
+    }
 
     dup() {
         this.stack.push(this.stack[this.a()]);
-    },
+    }
 
     tan() {
         this.stack.push(Math.tan(this.a(true)));
-    },
+    }
 
     tan() {
         this.stack.push(Math.tan(this.a(true)));
-    },
+    }
 
     sin() {
         this.stack.push(Math.sin(this.a(true)));
-    },
+    }
 
     cos() {
         this.stack.push(Math.cos(this.a()));
-    },
+    }
 
     empty() {
         this.stack = [];
-    },
+    }
 
     stackLength() {
         this.stack.push(this.stack.length);
-    },
+    }
 
     lastArrayIndex() {
         let i = this.stack.length - 1
@@ -125,41 +127,40 @@ module.exports = {
             }
         }
         return i
-    },
+    }
 
     element() {
         this.stack.push(this.stack[lastArrayIndex()][this.a()])
-        console.log(this.stack);
-    },
+    }
 
     elementPop() {
         let index = lastArrayIndex()
         this.stack.push(this.stack[index][this.a()])
         this.stack.splice(index, 1);
-        console.log(this.stack);
-    },
+    }
 
     compare() {
         return this.a(true) == this.a(true)
-    },
+    }
 
     printPop() {
-        process.stdout.write(this.a(true).toString());
-    },
+        this.outputCallback(this.a(true).toString())
+    }
 
     print() {
-        process.stdout.write(this.a().toString());
-    },
+        this.outputCallback(this.a().toString());
+    }
 
     increment() {
         this.stack[this.stack.length - 1]++;
-    },
+    }
 
     decrement() {
         this.stack[this.stack.length - 1]--;;
-    },
+    }
 
     setStack(st) {
         this.stack = st;
     }
 }
+module.exports.Engine = Engine
