@@ -1,8 +1,7 @@
 const fs = require('fs')
-const yaml = require('js-yaml');
 const table = require('markdown-table');
 
-const tokens = yaml.safeLoad(fs.readFileSync('./tokens.yaml', 'utf8'));
+const tokens = require('./config').getAtoms();
 
 let alphabet = [
         "¡", "¢", "£", "¤", "¥", "¦", "©", "¬", "®", "µ", "½", "¿", "€", "Æ", "Ç",
@@ -32,7 +31,7 @@ tokens.forEach(tok => {
     }
 });
 
-fs.writeFile("./tokens.yaml", yaml.safeDump(tokens), err => console.log);
+require('./config').setAtoms(tokens);
 
 const docs = tokens.map(token => {
     const lil = '`' + (token.lil === null ? token.lil_generated + '` (gen.)' : token.lil + '`');

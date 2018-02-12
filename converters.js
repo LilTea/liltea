@@ -1,7 +1,6 @@
 const fs = require('fs');
-const yaml = require('js-yaml');
 
-const tokens = yaml.safeLoad(fs.readFileSync('./tokens.yaml', 'utf8'));
+const tokens = require('./config').getAtoms();
 
 function tokenToToken(token, from, to) {
     const found = tokens.filter(t => t[from] === token);
