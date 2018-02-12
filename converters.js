@@ -5,8 +5,8 @@ const tokens = yaml.safeLoad(fs.readFileSync('./tokens.yaml', 'utf8'));
 
 function tokenToToken(token, from, to) {
     const found = tokens.filter(t => t[from] === token);
-    if (found == 0) throw Error(`${to} token for ${from} token "${token}" not found.`)
-    if (found > 0) throw Error(`more than 1 possible ${to} tokens exist for ${from} token "${token}".`)
+    if (found.lenght == 0) throw Error(`${to} token for ${from} token "${token}" not found.`)
+    if (found.lenght > 1) throw Error(`more than 1 possible ${to} tokens exist for ${from} token "${token}".`)
     return found[0][to];
 }
 
