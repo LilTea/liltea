@@ -1,7 +1,7 @@
-module.exports.parseInput = function(input) 
-{
+module.exports.parseInput = function (input) {
     let lines = input.split(/\r\n?|\n/);
     let elements = lines.map(l => l.split(/\s/));
-    let stack = elements.map(el => el.map(inEl => isNaN(parseFloat(inEl)) ? inEl : parseFloat(inEl)));
+    let convertEl = inEl => isNaN(parseFloat(inEl)) ? inEl : parseFloat(inEl);
+    let stack = elements.map(el => el.length == 1 ? convertEl(el[0]) : el.map(convertEl));
     return stack;
 }
