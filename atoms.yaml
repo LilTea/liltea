@@ -98,17 +98,47 @@
   js: decrement
   description: Decrement the top value with 1
 - lil: null
+  big: toString
+  js: toString
+  description: Converts a to string
+  lil_generated: ¿
+- lil: null
+  big: toInteger
+  js: toInteger
+  description: Converts a to number
+  lil_generated: €
+- lil: null
+  big: toArray
+  js: toArray
+  description: Converts a to array
+  lil_generated: Æ
+- lil: null
+  big: fact
+  js: fact
+  description: Pops a and pushes its factoriel
+  lil_generated: Ç
+- lil: null
+  big: ceil
+  js: ceil
+  description: Ceils a
+  lil_generated: Ð
+- lil: null
+  big: floor
+  js: floor
+  description: Floors a
+  lil_generated: Ñ
+- lil: null
   big: setPrevent
   js: setPreventPop
-  lil_generated: ¿
+  lil_generated: ×
   description: Prevents the next operation from popping
 - lil: null
   big: setReverse
   js: setReverse
-  lil_generated: €
+  lil_generated: Ø
   description: Causes the next operation to see the stack in reverse
 - lil: null
   big: setGreed
   js: setGreed
-  lil_generated: Æ
+  lil_generated: Œ
   description: Causes the next operator to be applied to the entire stack
