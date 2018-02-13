@@ -52,7 +52,6 @@ class Engine{
             if (toPop==true && this.flags.preventPop == false) {
                 return this.stack.pop();
             } else {
-
                 return this.stack[this.stack.length - 1];
             }
         }
@@ -162,10 +161,32 @@ class Engine{
     decrement() {
         this.stack[this.stack.length - 1]--;
     }
-    
+    toString(){
+        this.stack.push(this.a(true).toString())
+    }
+    toInteger(){
+        this.stack.push(Number(this.a(true)))
+    }
+    toArray(){
+        this.stack.push([this.a(true)])
+    }
+    fact(){
+        var rval=1;
+        for (var i = 2; i <= this.a(true); i++)
+            rval = rval * i;
+        
+        this.stack.push(rval)
+    }
     setStack(st) {
         this.stack = st;
     }
+    ceil(){
+        this.stack.push(Math.ceil(this.a(true)))
+    }
+    floor(){
+        this.stack.push(Math.floor(this.a(true)))
+    }
+    
 }
 
 module.exports.engine = Engine
