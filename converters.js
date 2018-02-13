@@ -3,10 +3,10 @@ const fs = require('fs');
 const tokens = require('./config').getAtoms();
 
 function tokenToToken(token, from, to) {
-    const found = tokens.filter(t => t[from] === token);
+    const found = tokens.filter(t => t[from] === token || t[from + "_generated"] === token);
     if (found.length == 0) throw Error(`${to} token for ${from} token "${token}" not found.`)
     if (found.length > 1) throw Error(`more than 1 possible ${to} tokens exist for ${from} token "${token}".`)
-    return found[0][to];
+    return found[0][to] || found[0][to + "_generated"];
 }
 
 lil2jsToken = (token) => tokenToToken(token, "lil", "js");
