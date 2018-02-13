@@ -171,8 +171,9 @@ class Engine{
         this.stack.push([this.a(true)])
     }
     fact(){
-        var rval=1;
-        for (var i = 2; i <= this.a(true); i++)
+        let rval=1;
+        let num = this.a(true)
+        for (var i = 2; i <= num; i++)
             rval = rval * i;
         
         this.stack.push(rval)

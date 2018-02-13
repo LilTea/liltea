@@ -80,3 +80,48 @@ test('element', ()=>{
     eng.element() 
     expect(eng.stack).toEqual(['asd',3,[4,5],1,5])
 })
+test('toString', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],1])
+    eng.toString() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],'1'])
+})
+test('toInteger', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],'56'])
+    eng.toInteger() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],56])
+})
+test('toArray', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],'56'])
+    eng.toArray() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],['56']])
+})
+test('toArray', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],'56'])
+    eng.toArray() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],['56']])
+})
+test('fact', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],5])
+    eng.fact() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],120])
+})
+test('ceil', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],5.2])
+    eng.ceil() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],6])
+})
+test('floor', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],5.8])
+    eng.floor() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],5])
+})
+test('decrement', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],6])
+    eng.decrement() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],5])
+})
+test('increment', ()=>{
+    eng.setStack(['asd', 3 ,[4 ,5],6])
+    eng.increment() 
+    expect(eng.stack).toEqual(['asd',3,[4,5],7])
+})
