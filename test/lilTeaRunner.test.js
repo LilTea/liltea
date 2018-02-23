@@ -1,4 +1,4 @@
-const runLilTea = require('./lilTeaRunner').runLilTea;
+const runLilTea = require('../lib/lilTeaRunner').runLilTea;
 
 let engine = {deleteModificators: jest.fn()}
 

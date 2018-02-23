@@ -1,4 +1,4 @@
-const Engine = require('./engine').engine;
+const Engine = require('../lib/engine').engine;
 eng = new Engine();
 test('add', () => {
     eng.setStack([1, 2]);

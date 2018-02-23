@@ -1,4 +1,4 @@
-const parseInput = require('./inputParser').parseInput;
+const parseInput = require('../lib/inputParser').parseInput;
 
 test('multiline just numbers happy test', () => {
     let input = 
