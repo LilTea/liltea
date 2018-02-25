@@ -4,7 +4,7 @@
   "description": "lil",
   "main": "main.js",
   "jest": {
-    "collectCoverage" : true,
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "lib/*.js",
       "config/*.js",
@@ -26,7 +26,8 @@
   "homepage": "https://github.com/mdatsev/liltea#readme",
   "dependencies": {
     "js-yaml": "^3.10.0",
-    "markdown-table": "^1.1.1"
+    "markdown-table": "^1.1.1",
+    "mock-stdin": "^0.3.1"
   },
   "devDependencies": {
     "jest": "^22.2.1"
