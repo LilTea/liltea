@@ -1,6 +1,6 @@
 const helpers = require("../lib/helpers")
 
-test('just strings', () => {
+test('getInput', () => {
     const stdin = require('mock-stdin').stdin();
     
     const callback = jest.fn();
