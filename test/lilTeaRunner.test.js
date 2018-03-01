@@ -1,6 +1,6 @@
 const runLilTea = require('../lib/lilTeaRunner').runLilTea;
 
-let engine = {deleteModificators: jest.fn()}
+let engine = {deleteModificators: jest.fn(), do(p){ this[p]() }}
 
 test('calling the right engine function', () => {
     let source = "+";
