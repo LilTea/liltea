@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const atomsPath = path.join(__dirname, 'atoms.yaml');
+const specialTokensPath = path.join(__dirname, 'special_tokens.yaml');
 
 module.exports =
 {
@@ -16,6 +17,6 @@ module.exports =
     },
     getSpecialTokens()
     {
-        throw Error("Not implemented");
+        return yaml.safeLoad(fs.readFileSync(specialTokensPath, 'utf8'));
     }
 }
