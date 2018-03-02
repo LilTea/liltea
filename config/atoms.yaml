@@ -14,6 +14,10 @@
   big: div
   js: divide
   description: Pops the top 2 values and pushes their quotient
+- lil: '%'
+  big: mod
+  js: modulo
+  description: Pops the top 2 values and pushes their their remainder after division
 - lil: $
   big: index
   js: at
@@ -76,7 +80,7 @@
   big: elementPop
   js: elementPop
   description: Pops the top value and the top array and pushes the element at that index
-- lil: =
+- lil: '='
   big: compare
   js: compare
   description: Pops the top 2 values and pushes their equality
@@ -127,18 +131,3 @@
   js: floor
   description: Floors a
   lil_generated: Ñ
-- lil: null
-  big: setPrevent
-  js: setPreventPop
-  lil_generated: ×
-  description: Prevents the next operation from popping
-- lil: null
-  big: setReverse
-  js: setReverse
-  lil_generated: Ø
-  description: Causes the next operation to see the stack in reverse
-- lil: null
-  big: setGreed
-  js: setGreed
-  lil_generated: Œ
-  description: Causes the next operator to be applied to the entire stack
