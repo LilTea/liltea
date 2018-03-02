@@ -12,6 +12,9 @@ single_if: '?'
 multi_if: '!'
 single_else: ':'
 multi_else: ';'
+prevent_pop_flag: ×
+reverse_stack_flag: Ø
+greedy_flag: Œ
 varables:
   - setter: a
     getter: A

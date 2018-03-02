@@ -15,3 +15,10 @@ test('single statement if', () => {
     runLilTea(source, engine, null, {single_if: '?'});
     expect(engine.singleIf).toHaveBeenCalled();
 });
+
+test('basic string literal', () => {
+    let source = '>asd<';
+    engine.push = jest.fn();
+    runLilTea(source, engine, null, {string_literal_open: '>', string_literal_close: '<'});
+    expect(engine.push).toHaveBeenCalledWith('asd');
+});
