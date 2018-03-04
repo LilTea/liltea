@@ -22,3 +22,18 @@ test('basic string literal', () => {
     runLilTea(source, engine, null, {string_literal_open: '>', string_literal_close: '<'});
     expect(engine.push).toHaveBeenCalledWith('asd');
 });
+test('basic var operation', () => {
+    let source = '>asd<A';
+    let specialSymbols = 
+    {
+        string_literal_open: '>',
+        string_literal_close: '<',
+        variables: [{
+            "setter" : "a",
+            "getter" : "A"
+        }]
+    }
+    engine.getVar = jest.fn();
+    runLilTea(source, engine, null,specialSymbols);
+    expect(engine.getVar).toHaveBeenCalledWith(0);
+});
