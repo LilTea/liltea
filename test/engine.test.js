@@ -148,3 +148,13 @@ test('single if complex', ()=>{
     eng.do('increment') // increment [11]
     expect(eng.stack).toEqual([11])
 })
+test('var set and get', ()=>{
+    eng.setStack([10, 0, 1])
+    eng.setVar(0);
+    expect(eng.getVar(0)).toEqual(1);
+})
+test('checking the stack after set', ()=>{
+    eng.setStack([10, 0, 1])
+    eng.setVar(0);
+    expect(eng.stack).toEqual([10,0]);
+})

@@ -37,3 +37,35 @@ test('basic var operation', () => {
     runLilTea(source, engine, null,specialSymbols);
     expect(engine.getVar).toHaveBeenCalledWith(0);
 });
+test('basic var operation', () => {
+    let source = '>asd<a';
+    let specialSymbols = 
+    {
+        string_literal_open: '>',
+        string_literal_close: '<',
+        variables: [{
+            "setter" : "a",
+            "getter" : "A"
+        }]
+    }
+    engine.setVar = jest.fn();
+    runLilTea(source, engine, null,specialSymbols);
+    expect(engine.setVar).toHaveBeenCalledWith(0);
+});
+test('complex var operation', () => {
+    let source = '>asd<aA';
+    let specialSymbols = 
+    {
+        string_literal_open: '>',
+        string_literal_close: '<',
+        variables: [{
+            "setter" : "a",
+            "getter" : "A"
+        }]
+    }
+    engine.setVar = jest.fn();
+    engine.getVar = jest.fn();
+    runLilTea(source, engine, null,specialSymbols);
+    expect(engine.setVar).toHaveBeenCalledWith(0);
+    expect(engine.getVar).toHaveBeenCalledWith(0);
+});
