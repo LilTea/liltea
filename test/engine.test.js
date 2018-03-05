@@ -151,7 +151,8 @@ test('single if complex', ()=>{
 test('var set and get', ()=>{
     eng.setStack([10, 0, 1])
     eng.setVar(0);
-    expect(eng.getVar(0)).toEqual(1);
+    eng.getVar(0);
+    expect(eng.stack).toEqual([10,0,1]);
 })
 test('checking the stack after set', ()=>{
     eng.setStack([10, 0, 1])
