@@ -159,3 +159,9 @@ test('checking the stack after set', ()=>{
     eng.setVar(0);
     expect(eng.stack).toEqual([10,0]);
 })
+test('checking the stack after set and get', ()=>{
+    eng.setStack([10,0,1])
+    eng.setVar(2);
+    eng.getVar(2);
+    expect(eng.stack).toEqual([10,0,1]);
+});
