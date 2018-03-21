@@ -1,0 +1,8 @@
+- lil: a
+  big: A
+  js: aA
+  description: Lorem ipsum
+- lil: '1'
+  big: numeric
+  js: number1
+  description: Lorem ipsum
