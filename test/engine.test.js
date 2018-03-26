@@ -126,28 +126,12 @@ test('increment', ()=>{
     expect(eng.stack).toEqual(['asd',3,[4,5],7])
 })
 
-test('single if false', ()=>{
+test('popCondition', ()=>{
     eng.setStack([10, false])
-    eng.singleIf();
-    eng.do('increment')
+    expect(eng.popCondition()).toEqual(false)
     expect(eng.stack).toEqual([10])
 })
 
-test('single if true', ()=>{
-    eng.setStack([10, true])
-    eng.singleIf();
-    eng.do('increment')
-    expect(eng.stack).toEqual([11])
-})
-
-test('single if complex', ()=>{
-    eng.setStack(                    [10, 0, 1])
-    eng.singleIf();     // true      [10, 0]
-    eng.do('increment') // increment [10, 1]
-    eng.singleIf();     // true      [10]
-    eng.do('increment') // increment [11]
-    expect(eng.stack).toEqual([11])
-})
 test('var set and get', ()=>{
     eng.setStack([10, 0, 1])
     eng.setVar(0);

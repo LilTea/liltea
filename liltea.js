@@ -4,5 +4,7 @@ require("./lib/helpers").getInput(input => {
     const source = require("fs").readFileSync(process.argv[2]).toString();
     let stack = require("./lib/inputParser").parseInput(input);
     engine.setStack(stack);
-    require("./lib/lilTeaRunner").runLilTea(source, engine, require("./lib/converters").lil2jsToken, require("./config").getSpecialTokens());
+    require("./lib/lilTeaRunner").runLilTea(source, engine,
+        require("./lib/converters").lil2jsToken,
+        require("./lib/config").loadConfigSync().getSpecialTokens());
 });

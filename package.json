@@ -27,7 +27,8 @@
   "dependencies": {
     "js-yaml": "^3.10.0",
     "markdown-table": "^1.1.1",
-    "mock-stdin": "^0.3.1"
+    "mock-stdin": "^0.3.1",
+    "rewire": "^3.0.2"
   },
   "devDependencies": {
     "jest": "^22.2.1"
