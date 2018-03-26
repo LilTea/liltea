@@ -1,6 +1,6 @@
 const config = require('../lib/config');
 const path = require('path')
-
+const fs = require('fs')
 test('getAtoms', () => {
     config.loadConfigSync({
         atomsPath: path.join(__dirname, 'mock_config/happy_atom.yaml')
@@ -32,4 +32,5 @@ test('saveConfigSync', () => {
         atomsPath: path.join(__dirname, 'mock_config/test.yaml')
     });
     expect(new_config.getAtoms()).toEqual(atoms);
+    fs.unlinkSync('test/mock_config/test.yaml');
 });
