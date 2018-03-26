@@ -14,6 +14,12 @@ test('simple number literal test', () => {
     runLilTea(source, engine, null, {});
     expect(engine.push).toHaveBeenCalledWith(3);
 });
+test('double digit number literal test', () => {
+    let source = '34';
+    engine.push = jest.fn(() => false);
+    runLilTea(source, engine, null, {});
+    expect(engine.push).toHaveBeenCalledWith(34);
+});
 test('single statement if', () => {
     let source = '?-';
     engine.popCondition = jest.fn(() => false);
