@@ -80,7 +80,7 @@
   big: elementPop
   js: elementPop
   description: Pops the top value and the top array and pushes the element at that index
-- lil: '='
+- lil: =
   big: compare
   js: compare
   description: Pops the top 2 values and pushes their equality

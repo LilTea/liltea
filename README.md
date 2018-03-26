@@ -28,8 +28,7 @@ To compress bigtea:
 compressor.js < source.bit
 ```
 
-## Documentaion
-
+## Documentaion 
 ### Literals
 ### Loops
 ### Conditionals
