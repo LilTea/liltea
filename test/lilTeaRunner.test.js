@@ -10,8 +10,8 @@ test('calling the right engine function', () => {
 });
 
 test('single statement if', () => {
-    let source = '?';
-    engine.popCondition = jest.fn(() => true);
+    let source = '?-';
+    engine.popCondition = jest.fn(() => false);
     runLilTea(source, engine, null, {single_if: '?'});
     expect(engine.popCondition).toHaveBeenCalled();
 });
