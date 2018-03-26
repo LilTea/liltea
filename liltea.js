@@ -6,5 +6,5 @@ require("./lib/helpers").getInput(input => {
     engine.setStack(stack);
     require("./lib/lilTeaRunner").runLilTea(source, engine,
         require("./lib/converters").lil2jsToken,
-        require("./lib/config").getSpecialTokens());
+        require("./lib/config").loadConfigSync().getSpecialTokens());
 });
