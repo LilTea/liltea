@@ -20,6 +20,12 @@ test('simple number list  literal test', () => {
     runLilTea(source, engine, null, {list_literal_open: '[',list_literal_close: ']'});
     expect(engine.push).toHaveBeenCalledWith([3,4,5,6]);
 });
+test('simple number list  literal test', () => {
+    let source = '[33,44,55,666]';
+    engine.push = jest.fn(() => false);
+    runLilTea(source, engine, null, {list_literal_open: '[',list_literal_close: ']'});
+    expect(engine.push).toHaveBeenCalledWith([33,44,55,666]);
+});
 test('double digit number literal test', () => {
     let source = '3456';
     engine.push = jest.fn(() => false);
