@@ -11,9 +11,9 @@ test('calling the right engine function', () => {
 
 test('single statement if', () => {
     let source = '?';
-    engine.singleIf = jest.fn();
+    engine.popCondition = jest.fn(() => true);
     runLilTea(source, engine, null, {single_if: '?'});
-    expect(engine.singleIf).toHaveBeenCalled();
+    expect(engine.popCondition).toHaveBeenCalled();
 });
 
 test('basic string literal', () => {
