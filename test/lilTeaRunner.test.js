@@ -8,7 +8,12 @@ test('calling the right engine function', () => {
     runLilTea(source, engine, () => "test", {});
     expect(engine.test).toHaveBeenCalled();
 });
-
+test('simple number literal test', () => {
+    let source = '3';
+    engine.push = jest.fn(() => false);
+    runLilTea(source, engine, null, {});
+    expect(engine.push).toHaveBeenCalledWith(3);
+});
 test('single statement if', () => {
     let source = '?-';
     engine.popCondition = jest.fn(() => false);
