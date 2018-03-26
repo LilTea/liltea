@@ -2,7 +2,7 @@ const runLilTea = require('../lib/lilTeaRunner').runLilTea;
 
 let engine = {deleteModificators: jest.fn(), do(p){ this[p]() }}
 
-test('calling the right engine function', () => {
+/*test('calling the right engine function', () => {
     let source = "+";
     engine.test = jest.fn();
     runLilTea(source, engine, () => "test", {});
@@ -15,11 +15,18 @@ test('simple number literal test', () => {
     expect(engine.push).toHaveBeenCalledWith(3);
 });
 test('double digit number literal test', () => {
-    let source = '34';
+    let source = '3456';
     engine.push = jest.fn(() => false);
     runLilTea(source, engine, null, {});
+    expect(engine.push).toHaveBeenCalledWith(3456);
+}); */
+test('complex double digit number literal test', () => {
+    let source = '34>asd<';
+    engine.push = jest.fn(() => false);
+    runLilTea(source, engine, null, {string_literal_open: '>', string_literal_close: '<'});
     expect(engine.push).toHaveBeenCalledWith(34);
 });
+/*
 test('single statement if', () => {
     let source = '?-';
     engine.popCondition = jest.fn(() => false);
@@ -80,3 +87,4 @@ test('complex var operation', () => {
     expect(engine.setVar).toHaveBeenCalledWith(0);
     expect(engine.getVar).toHaveBeenCalledWith(0);
 });
+*/
