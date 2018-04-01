@@ -173,3 +173,18 @@ test('less', ()=>{
     eng.do('less') 
     expect(eng.stack).toEqual(['asd',3,false])
 })
+test('bitswiseAnd', ()=>{
+    eng.setStack(['asd', 3 ,5,6])
+    eng.do('bitwiseAnd') 
+    expect(eng.stack).toEqual(['asd',3, 4])
+})
+test('bitswiseAnd', ()=>{
+    eng.setStack(['asd', 3 ,5 ,6])
+    eng.do('bitwiseOr') 
+    expect(eng.stack).toEqual(['asd',3, 7])
+})
+test('bitswiseAnd', ()=>{
+    eng.setStack(['asd', 3 ,5 ,6])
+    eng.do('bitwiseXor') 
+    expect(eng.stack).toEqual(['asd',3, 3])
+})
