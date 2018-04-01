@@ -163,3 +163,13 @@ test('checking the def values after get', ()=>{
     eng.getVar(2);
     expect(eng.stack).toEqual([10,0,1,Math.PI]);
 });
+test('bigger', ()=>{
+    eng.setStack(['asd', 3 ,5 , 6])
+    eng.do('bigger') 
+    expect(eng.stack).toEqual(['asd',3,true])
+})
+test('less', ()=>{
+    eng.setStack(['asd', 3 ,5,6])
+    eng.do('less') 
+    expect(eng.stack).toEqual(['asd',3,false])
+})

@@ -139,3 +139,15 @@
   big: less
   js: less
   description: Checks if the last element is less than the previous one
+- lil: '&'
+  big: AND
+  js: bitswiseAnd
+  description: Push the bitwise AND comparisment of the last two elements
+- lil: '|'
+  big: OR
+  js: bitswiseOr
+  description: Push the bitwise OR comparisment of the last two elements
+- lil: '^'
+  big: XOR
+  js: bitswiseXor
+  description: Push the bitwise XOR comparisment of the last two elements
