@@ -131,3 +131,11 @@
   js: floor
   description: Floors a
   lil_generated: Ñ
+- lil: '>'
+  big: bigger
+  js: bigger
+  description: Checks if the last element is bigger than the previous one
+- lil: '<'
+  big: less
+  js: less
+  description: Checks if the last element is less than the previous one
