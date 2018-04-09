@@ -106,3 +106,20 @@ test('complex var operation', () => {
     expect(engine.getVar).toHaveBeenCalledWith(0);
 });
 
+test('multi if false', () => {
+    let source = 'a!bc}d';
+    let spToksMock = 
+    {
+        multi_if: '!',
+        block_close: '}',
+    }
+    engine.a = jest.fn();
+    engine.b = jest.fn();
+    engine.c = jest.fn();
+    engine.d = jest.fn();
+    engine.popCondition = () => false;
+    runLilTea(source, engine, x => x, spToksMock);
+    expect(engine.a).toHaveBeenCalled();
+    expect(engine.d).toHaveBeenCalled();
+});
+
