@@ -18,9 +18,11 @@ function toBeCalledWith(source, result, func){
     runLilTea(source, engine, null, testSymbols);
     expect(func).toHaveBeenCalledWith(result)
 }
+
 describe("Push operations", ()=>{
     beforeEach(()=>{
         engine.push = jest.fn(() => false);
+		engine.pop = jest.fn(() => 2)
     })
     test('simple number literal test', () => {
         source = '3';
@@ -50,8 +52,89 @@ describe("Push operations", ()=>{
         source = '>asd<';
         toBeCalledWith(source,'asd',engine.push)
     });
+	test('n times loop', () => {
+			source = '2/a}'
+			engine.a = jest.fn();
+			runLilTea(source, engine, x=>x, {
+				n_times_loop_open: '/',
+				block_close: '}'
+			});
+			expect(engine.a).toHaveBeenCalledTimes(2)
+	})
+	test('n times loop', () => {
+			source = '2/5}'
+			runLilTea(source, engine, null, {
+				n_times_loop_open: '/',
+				block_close: '}'
+			});
+			expect(engine.push).toHaveBeenCalledTimes(3)
+	})
 })
+	describe("block tests", () => {
+		test('single statement if', () => {
+			let source = '?-';
+			engine.popCondition = jest.fn(() => false);
+			runLilTea(source, engine, null, {single_if: '?'});
+			expect(engine.popCondition).toHaveBeenCalled();
+		});
+		test('multi if false', () => {
+			let source = 'a!bc}d';
+			let spToksMock = 
+			{
+				multi_if: '!',
+				block_close: '}',
+			}
+			engine.a = jest.fn();
+			engine.b = jest.fn();
+			engine.c = jest.fn();
+			engine.d = jest.fn();
+			engine.popCondition = () => false;
+			runLilTea(source, engine, x => x, spToksMock);
+			expect(engine.a).toHaveBeenCalled();
+			expect(engine.d).toHaveBeenCalled();
+		});
+		test('multi if false', () => {
+			let source = 'a!bc}d';
+			let spToksMock = 
+			{
+				multi_if: '!',
+				block_close: '}',
+			}
+			engine.a = jest.fn();
+			engine.b = jest.fn();
+			engine.c = jest.fn();
+			engine.d = jest.fn();
+			engine.popCondition = () => true;
+			runLilTea(source, engine, x => x, spToksMock);
+			expect(engine.a).toHaveBeenCalled();
+			expect(engine.d).toHaveBeenCalled();
+			expect(engine.b).toHaveBeenCalled();
+			expect(engine.c).toHaveBeenCalled();
+		});
+		test('multi if false', () => {
+			let source = 'a!bc:ef}d';
+			let spToksMock = 
+			{
+				multi_if: '!',
+				block_close: '}',
+				multi_else: ':'
+			}
+			engine.a = jest.fn();
+			engine.b = jest.fn();
+			engine.c = jest.fn();
+			engine.d = jest.fn();
+			engine.e = jest.fn();
+			engine.f = jest.fn();
+			engine.popCondition = () => false;
+			runLilTea(source, engine, x => x, spToksMock);
+			expect(engine.a).toHaveBeenCalled();
+			expect(engine.e).toHaveBeenCalled();
+			expect(engine.f).toHaveBeenCalled();
+			expect(engine.d).toHaveBeenCalled();
+		});	
+		
 
+	})
 describe("var operations", ()=>{
     beforeEach(()=>{
         engine.getVar = jest.fn();
@@ -81,25 +164,5 @@ test('calling the right engine function', () => {
     runLilTea(source, engine, () => "test", {});
     expect(engine.test).toHaveBeenCalled();
 });
-test('single statement if', () => {
-    let source = '?-';
-    engine.popCondition = jest.fn(() => false);
-    runLilTea(source, engine, null, {single_if: '?'});
-    expect(engine.popCondition).toHaveBeenCalled();
-});
-/*test('multi if false', () => {
-    let source = 'a!bc}d';
-    let spToksMock = 
-    {
-        multi_if: '!',
-        block_close: '}',
-    }
-    engine.a = jest.fn();
-    engine.b = jest.fn();
-    engine.c = jest.fn();
-    engine.d = jest.fn();
-    engine.popCondition = () => false;
-    runLilTea(source, engine, x => x, spToksMock);
-    expect(engine.a).toHaveBeenCalled();
-    expect(engine.d).toHaveBeenCalled();
-});*/
+
+
