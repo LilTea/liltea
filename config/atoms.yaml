@@ -92,10 +92,9 @@
   big: printPop
   js: printPop
   description: Pop the top value and print it
-- lil: null
+- lil: .
   big: increment
   js: increment
-  lil_generated: ½
   description: Increment the top value with 1
 - lil: _
   big: decrement
@@ -151,3 +150,7 @@
   big: XOR
   js: bitswiseXor
   description: Push the bitwise XOR comparisment of the last two elements
+- lil: 'n'
+  big: NOT
+  js: notEqual
+  description: Pops the top 2 values and pushes 1 if they are not equal and 0 if they are equal

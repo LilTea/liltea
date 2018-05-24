@@ -15,11 +15,12 @@ let testSymbols= {
     }],
 }
 let blockTestSymbols = {
-	n_times_loop_open: '/',
+	n_times_loop_open: '\\',
 	block_close: '}',
 	multi_if: '!',
 	multi_else: ':',
-	single_if: '?'
+    single_if: '?',
+    conditional_loop_open: '{'
 }
 function toBeCalledWith(source, result, func){
     runLilTea(source, engine, converter, testSymbols);
@@ -79,17 +80,21 @@ describe('literals block tests', ()=>{
 		engine.popCondition = jest.fn(() => false)
 	})
 	test('n times loop with literals', () => {
-		source = '2/5}'
+		source = '2\\5}'
 		toBeCalledWithTimes(source,engine.push, 3);
 	})
 	test('single statement if', () => {
 		source = '?-';
 		toBeCalledFucntions(source, [engine.popCondition])
-	});
+    });
+    
 })
 describe('atom block tests', () => {
     beforeEach(()=>{
-		engine.pop = jest.fn(() => 2)
+        engine.pop = jest.fn(() => 2)
+        engine.push = jest.fn(()=> false)
+        engine.compare = jest.fn(()=> true)
+        engine.increment = jest.fn();
 		engine.a = jest.fn();
 		engine.b = jest.fn();
 		engine.c = jest.fn();
@@ -98,12 +103,16 @@ describe('atom block tests', () => {
 		engine.f = jest.fn();
 		converter = x => x
     })
+    test('conditionals loops', () =>{
+        source = '55{a}'
+        toBeCalledWithTimes(source,engine.a, 1);
+    })
 	test('n times nested loop', () => {
-			source = '//a}}'
+			source = '\\\\a}}'
 			toBeCalledWithTimes(source, engine.a, 4)
 	})
 	test('n times loop', () => {
-			source = '/a}'
+			source = '\\a}'
 			toBeCalledWithTimes(source, engine.a, 2)
 	})
 	test('multi if false', () => {
@@ -120,7 +129,8 @@ describe('atom block tests', () => {
 		 source = 'a!bc:ef}d';
 		engine.popCondition = () => false;
 		toBeCalledFucntions(source, [engine.a,engine.d,engine.b,engine.c,engine.e,engine.f]);
-	});*/	
+    });*/	
+
 })
 
 describe("var operations", ()=>{

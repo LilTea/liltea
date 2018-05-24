@@ -15,6 +15,7 @@ multi_else: ';'
 prevent_pop_flag: ×
 reverse_stack_flag: Ø
 greedy_flag: Œ
+null: ','
 variables:
   - setter: a
     getter: A
