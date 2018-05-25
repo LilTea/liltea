@@ -158,3 +158,7 @@
   big: pop 
   js: pop
   description: Pops the value depending on the modificator
+- lil: 'd'
+  big: doubeDup 
+  js: doubleDup
+  description: Duplicate and the last two values

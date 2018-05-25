@@ -21,6 +21,10 @@ describe('basic number operation',()=>{
         eng.do('divide');
         expect(eng.stack).toEqual([3,0.5]);
     })
+    test('doubleDup', ()=>{
+        eng.do('doubleDup');
+        expect(eng.stack).toEqual([3,4,8,4,8]);
+    })
     test('square', ()=>{
         eng.do('square');
         expect(eng.stack).toEqual([3,4,64])
