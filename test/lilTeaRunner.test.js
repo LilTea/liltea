@@ -104,8 +104,10 @@ describe('atom block tests', () => {
 		converter = x => x
     })
     test('conditionals loops', () =>{
-        //source = '55{a}'
-        //toBeCalledWithTimes(source,engine.a, 1);
+        let i = 10;
+        engine.pop = jest.fn(()=>i--)
+        source = '{a}'
+        toBeCalledWithTimes(source,engine.a, 10);
     })
 	test('n times nested loop', () => {
 			source = '\\\\a}}'
@@ -162,5 +164,6 @@ test('calling the right engine function', () => {
     runLilTea(source, engine, () => "test", {});
     expect(engine.test).toHaveBeenCalled();
 });
+
 
 
