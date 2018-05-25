@@ -146,7 +146,7 @@
   big: OR
   js: bitswiseOr
   description: Push the bitwise OR comparisment of the last two elements
-- lil: '^'
+- lil: 'x'
   big: XOR
   js: bitswiseXor
   description: Push the bitwise XOR comparisment of the last two elements
@@ -154,3 +154,7 @@
   big: NOT
   js: notEqual
   description: Pops the top 2 values and pushes 1 if they are not equal and 0 if they are equal
+- lil: '^'
+  big: pop 
+  js: pop
+  description: Pops the value depending on the modificator
