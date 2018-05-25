@@ -145,11 +145,7 @@ describe('variables functionality', ()=>{
     test('checking the stack after set', ()=>{
         expect(eng.stack).toEqual([10,0]);
     })
-    test('checking the def values after get', ()=>{
-        eng.getVar(2);
-        eng.getVar(2);
-        expect(eng.stack).toEqual([10,0,1,Math.PI]);
-    });
+
 })
 describe('rounding and aproximations', ()=>{
     beforeEach(()=>{
