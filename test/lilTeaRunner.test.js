@@ -104,7 +104,7 @@ describe('atom block tests', () => {
 		converter = x => x
     })
     test('conditionals loops', () =>{
-        source = '55{a}'
+        //source = '55{a}'
         toBeCalledWithTimes(source,engine.a, 1);
     })
 	test('n times nested loop', () => {
