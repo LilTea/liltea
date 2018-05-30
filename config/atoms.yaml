@@ -159,8 +159,8 @@
   big: pop 
   js: pop
   description: Pops the value depending on the modificator
-- lil: '~'
-  big: doubeDup 
+- lil: 'O'
+  big: doubeDup
   js: doubleDup
   description: Duplicate the last two values
 - lil: 's'
@@ -171,7 +171,7 @@
   big: printStack
   js: debugPrintStack
   description: prints the stack (debugging)
-- lil: ' '
+- lil: '~'
   big: NOP
   js: NOP
   description: Does nothing.
