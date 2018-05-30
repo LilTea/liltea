@@ -40,21 +40,7 @@ compressor.js < source.bit
 ```
 
 ## Documentaion 
-### Literals
-### Loops
-### Conditionals
-### IO
-### [Atoms](atoms.md)
-
-
-### Modificators
-
-| lil | big        | Description                                                                                 |
-|-----|------------|---------------------------------------------------------------------------------------------|
-|     | `setPrevent` | Prevents the next operation from deleting things from the stack                           |
-|     | `setReverse` | Causes the next operator to read/pop from the beginning of the stack, rather than the end |
-|     | `setGreed`   | Causes the next operator to apply to the entire stack                                     |
-
+Documentation can be found at liltea.github.io
 
 ## Running the tests
 Just run
@@ -62,7 +48,7 @@ Just run
 npm test
 ```
 ## Deployment
-[![CircleCI](https://circleci.com/gh/liltea/liltea.svg?style=svg)](https://circleci.com/gh/liltea/liltea)
+[![CircleCI](https://circleci.com/gh/LilTea/liltea.svg?style=svg)](https://circleci.com/gh/LilTea/liltea)
 ## Built With Love
 ## Contributing
 ## Versioning 
